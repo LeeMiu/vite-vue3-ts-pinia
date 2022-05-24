@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-const routes: Array<RouteRecordRaw> =[
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Index',
@@ -9,17 +9,7 @@ const routes: Array<RouteRecordRaw> =[
       keepAlive: true,
       requireAuth: false,
     },
-    component: () => import('@/pages/Empty/other')
-  },
-  {
-    path: '/mouse',
-    name: 'Mouse',
-    meta: {
-      title: 'Mouse位置',
-      keepAlive: true,
-      requireAuth: false,
-    },
-    component: () => import('@/pages/Empty/index.vue')
+    component: () => import('@/pages/Empty'),
   },
   {
     path: '/pinia',
@@ -29,7 +19,7 @@ const routes: Array<RouteRecordRaw> =[
       keepAlive: true,
       requireAuth: false,
     },
-    component: () => import('@/components/usePinia')
+    component: () => import('@/components/usePinia'),
   },
   {
     path: '/vueuse',
@@ -39,13 +29,13 @@ const routes: Array<RouteRecordRaw> =[
       keepAlive: true,
       requireAuth: false,
     },
-    component: () => import('@/pages/vueUse')
-  }
-]
+    component: () => import('@/pages/vueUse'),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+});
 
-export default router
+export default router;

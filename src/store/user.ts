@@ -1,20 +1,30 @@
-import { defineStore } from "pinia";
+import api from '@/api';
+import { defineStore } from 'pinia';
 
 export const useUserStore = defineStore({
   id: 'user', // 必填，唯一，此例中为一个user的state集合
   state: () => ({
-      name: 'lee',
+    name: 'lee',
+    homeTown: 'China',
   }),
   getters: {
-    name(state) {
+    getname(state) {
       // do some format or others
-        return state.name;
+      return state.name + 'biu';
     },
   },
   actions: {
     // change state
     updateName(name: string) {
-      this.name = name
-    }
-  }
-})
+      this.name = name;
+    },
+    setData(data) {
+      console.log(data);
+    },
+    async login(account, pwd) {
+      const { data } = await api.login(account, pwd);
+      this.setData(data);
+      return data;
+    },
+  },
+});

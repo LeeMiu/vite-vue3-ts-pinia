@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vuejsx from '@vitejs/plugin-vue-jsx'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vuejsx from '@vitejs/plugin-vue-jsx';
 import * as path from 'path';
 
 // https://vitejs.dev/config/
@@ -8,8 +8,8 @@ export default defineConfig({
   resolve: {
     // 别名设置
     alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   plugins: [vue(), vuejsx()],
   build: {
@@ -36,15 +36,15 @@ export default defineConfig({
     port: 8080,
     hmr: {
       host: '127.0.0.1',
-      port: 8080
+      port: 8080,
     },
     // 设置代理
     proxy: {
       '/api': {
         target: 'https://xunlei.com', // 接口服务地址
         changeOrigin: true,
-        rewrite: (path: string) => path.replace(/^\/api/, '')
-      }
-    }
-  }
-})
+        rewrite: (path: string) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
+});

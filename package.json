@@ -2,15 +2,23 @@
   "name": "vite-vue3-ts-pinia",
   "private": true,
   "version": "0.0.0",
+  "comments": {
+    "scripts": {
+      "eslint": "使用 ESLint 检查并自动修复 src 目录下所有扩展名为 .js 和 .vue 的文件",
+      "commit": "引导设置规范化的提交信息",
+      "prettier": "自动格式化当前目录下的所有文件"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "eslint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "eslint": "eslint --ext .tsx,.ts,.js,.vue --ignore-path .gitignore --fix src",
     "commit": "git-cz",
     "prettier": "prettier --write"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^5.25.0",
     "@vitejs/plugin-vue-jsx": "^1.3.10",
     "@vueuse/core": "^8.4.2",
     "axios": "^0.27.2",

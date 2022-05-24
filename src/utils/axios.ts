@@ -1,6 +1,6 @@
-import axios, {AxiosResponse, AxiosRequestConfig} from "axios";
+import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
-const service = axios.create()
+const service = axios.create();
 
 // request interceptors， 拦截器
 service.interceptors.request.use(
@@ -13,13 +13,13 @@ service.interceptors.request.use(
   },
   (error: any) => {
     return Promise.reject(error);
-  }
-)
+  },
+);
 // response interceptors
 service.interceptors.response.use(
-  async(response: AxiosResponse) => {
+  async (response: AxiosResponse) => {
     // doing something
-    return response.data
+    return response.data;
   },
   (error: any) => {
     const response = error.response;
@@ -36,7 +36,7 @@ service.interceptors.response.use(
       console.error('system error！');
     }
     return Promise.reject(response);
-  }
-)
+  },
+);
 
-export default service
+export default service;
